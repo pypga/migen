@@ -24,6 +24,44 @@ _io = [
         Subsignal("n", Pins("AD19"), IOStandard("LVDS_25"),
             Misc("DIFF_TERM=TRUE"))
     ),
+
+    ("user_sma_mgt", 0,
+        Subsignal("txp", Pins("Y2")),
+        Subsignal("txn", Pins("Y1")),
+        Subsignal("rxp", Pins("AB6")),
+        Subsignal("rxn", Pins("AB5"))  
+    ),
+
+    ("sfp", 0,
+        Subsignal("txp", Pins("W4")),
+        Subsignal("txn", Pins("W3")),
+        Subsignal("rxp", Pins("Y6")),
+        Subsignal("rxn", Pins("Y5"))
+    ),
+    ("sfp_tx_disable_n", 0, Pins("AA18"), IOStandard("LVCMOS25")),
+
+    ("si5324", 0,
+        Subsignal("rst_n", Pins("W23"), IOStandard("LVCMOS25")),
+        Subsignal("int", Pins("AJ25"), IOStandard("LVCMOS25"))
+    ),
+    ("si5324_clkin", 0,
+        Subsignal("p", Pins("AD20"), IOStandard("LVDS_25")),
+        Subsignal("n", Pins("AE20"), IOStandard("LVDS_25"))
+    ),
+    ("si5324_clkout", 0,
+        Subsignal("p", Pins("AC8")),
+        Subsignal("n", Pins("AC7"))
+    ),
+
+    ("pmod1", 0, Pins("AJ21"), IOStandard("LVCMOS25")),
+    ("pmod1", 1, Pins("AK21"), IOStandard("LVCMOS25")),
+    ("pmod1", 2, Pins("AB21"), IOStandard("LVCMOS25")),
+    ("pmod1", 3, Pins("AB16"), IOStandard("LVCMOS25")),
+    ("pmod1", 4, Pins("Y20"), IOStandard("LVCMOS25")),
+    ("pmod1", 5, Pins("AA20"), IOStandard("LVCMOS25")),
+    ("pmod1", 6, Pins("AC18"), IOStandard("LVCMOS25")),
+    ("pmod1", 7, Pins("AC19"), IOStandard("LVCMOS25")),
+
 ]
 
 _connectors = [
@@ -92,7 +130,7 @@ _connectors = [
         "LA17_CC_N": "W24",
         "LA23_P": "P25",
         "LA23_N": "P26",
-        "LA26_P": "P28",
+        "LA26_P": "R28",
         "LA26_N": "T28",
         "PG_M2C": "U16.16",
         # ZC706 User Guide p. 68 col. 1
@@ -236,6 +274,17 @@ _connectors = [
         "LA30_N": "AB30",
         "LA32_P": "Y26",
         "LA32_N": "Y27",
+        }
+    ),
+    ("XADC", {
+        "GPIO0": "H14",
+        "GPIO1": "J15",
+        "GPIO2": "J16",
+        "GPIO3": "J14",
+        "VAUX0_N": "L14",
+        "VAUX0_P": "L15",
+        "VAUX8_N": "H13",
+        "VAUX8_P": "J13",
         }
     ),
 ]
